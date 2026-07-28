@@ -1,13 +1,30 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+  background:linear-gradient(100deg,#4facfe,#00f2fe);
+
 }
 
 #mainHeading {
     text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+    font-size: 40px;
 }
-
+.b{
+   border: 1px solid #000000;
+     border-radius: 12px;
+    padding: 25px;
+    background: #fefefe7b;
+    box-shadow: 0 8px 18px rgb(94, 93, 93);
+}
 .gridContainer {
     display: grid;
+    
     grid-template-columns: 200px 150px 100px;
     column-gap: 10px;
     row-gap: 10px;
@@ -17,10 +34,17 @@ body {
 
 #todoInput,
 #todoDate {
-    font-size: 17px;
-    padding: 10px 7px;
+     padding:12px 15px;
+    font-size:16px;
+    border:2px solid #ddd;
+    border-radius:10px;
+    outline:none;
+    transition:.3s;
 }
-
+.buttonTodo:hover{
+    background-color: rgb(79, 157, 0);
+        transform:scale(1.05);
+}
 .buttonTodo {
     background-color: rgb(8, 164, 18);
     color: white;
@@ -29,7 +53,10 @@ body {
     padding: 14px 0;
     cursor: pointer;
 }
-
+.buttonDelete:hover{
+background-color: rgb(169, 13, 13);
+    transform:scale(1.05);
+}
 .buttonDelete {
     background-color: rgb(213, 0, 0);
     color: white;
@@ -38,3 +65,8 @@ body {
     padding: 14px 0;
     cursor: pointer;
 }
+#todoInput:focus,
+#todoDate:focus{
+    border-color:#6e8ea9;
+    box-shadow:0 0 8px rgba(79,172,254,.4);}
+    
