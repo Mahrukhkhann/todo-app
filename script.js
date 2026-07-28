@@ -3,10 +3,19 @@ let todoList = [
         item: 'buy milk',
         dueDte: '3/2/2026'
     },
+
     {
         item: 'go to school',
         dueDte: '3/2/2026'
-    }
+    },
+     {
+        item: 'go to park',
+        dueDte: '3/8/2026'
+    // },
+    // {
+    //     item: 'go to park',
+    //     dueDte: '3/8/2026'
+    // }
 ];
 
 displayItems();
@@ -29,6 +38,7 @@ function addTodo() {
 
     displayItems();
 }
+
 
 function displayItems() {
 

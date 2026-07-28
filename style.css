@@ -4,15 +4,11 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
   background:linear-gradient(100deg,#4facfe,#00f2fe);
 
 }
-
 #mainHeading {
     text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 900;
     font-size: 40px;
 }
 .b{
@@ -20,18 +16,14 @@ body {
      border-radius: 12px;
     padding: 25px;
     background: #fefefe7b;
-    box-shadow: 0 8px 18px rgb(94, 93, 93);
-}
+    box-shadow: 0 8px 18px rgb(94, 93, 93);}
 .gridContainer {
     display: grid;
-    
     grid-template-columns: 200px 150px 100px;
     column-gap: 10px;
     row-gap: 10px;
     margin-top: 10px;
-    align-items: center;
-}
-
+    align-items: center;}
 #todoInput,
 #todoDate {
      padding:12px 15px;
@@ -42,7 +34,7 @@ body {
     transition:.3s;
 }
 .buttonTodo:hover{
-    background-color: rgb(79, 157, 0);
+    background-color: rgb(8, 255, 25);
         transform:scale(1.05);
 }
 .buttonTodo {
