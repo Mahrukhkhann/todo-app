@@ -11,11 +11,8 @@ let todoList = [
      {
         item: 'go to park',
         dueDte: '3/8/2026'
-    // },
-    // {
-    //     item: 'go to park',
-    //     dueDte: '3/8/2026'
-    // }
+    },
+    
 ];
 
 displayItems();

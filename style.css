@@ -1,64 +1,258 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Poppins", Arial, sans-serif;
+    min-height: 100vh;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-  background:linear-gradient(100deg,#4facfe,#00f2fe);
+
+    background: linear-gradient(
+        120deg,
+        #4facfe,
+        #00f2fe,
+        #43e97b
+    );
+
+    background-size: 300% 300%;
+    animation: gradientMove 8s ease infinite;
+}
+
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+#mainHeading {
+    color: white;
+    font-size: 45px;
+    letter-spacing: 2px;
+    text-shadow: 0 5px 15px rgba(0,0,0,.3);
+}
+
+
+.b {
+
+    width: 550px;
+    padding: 30px;
+
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(15px);
+
+    border-radius: 25px;
+
+    border: 1px solid rgba(255,255,255,.4);
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.2);
 
 }
-#mainHeading {
-    text-align: center;
-    font-size: 40px;
-}
-.b{
-   border: 1px solid #000000;
-     border-radius: 12px;
-    padding: 25px;
-    background: #fefefe7b;
-    box-shadow: 0 8px 18px rgb(94, 93, 93);}
+
+
+
 .gridContainer {
-    display: grid;
-    grid-template-columns: 200px 150px 100px;
-    column-gap: 10px;
-    row-gap: 10px;
-    margin-top: 10px;
-    align-items: center;}
+
+    display:grid;
+
+    grid-template-columns: 1fr 150px 100px;
+
+    gap:15px;
+
+    align-items:center;
+
+}
+
+
+
 #todoInput,
 #todoDate {
-     padding:12px 15px;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:15px;
+
     font-size:16px;
-    border:2px solid #ddd;
-    border-radius:10px;
+
+    background:white;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.1);
+
     outline:none;
-    transition:.3s;
+
 }
-.buttonTodo:hover{
-    background-color: rgb(8, 255, 25);
-        transform:scale(1.05);
-}
-.buttonTodo {
-    background-color: rgb(8, 164, 18);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 14px 0;
-    cursor: pointer;
-}
-.buttonDelete:hover{
-background-color: rgb(169, 13, 13);
-    transform:scale(1.05);
-}
-.buttonDelete {
-    background-color: rgb(213, 0, 0);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 14px 0;
-    cursor: pointer;
-}
+
+
+
 #todoInput:focus,
-#todoDate:focus{
-    border-color:#6e8ea9;
-    box-shadow:0 0 8px rgba(79,172,254,.4);}
-    
+#todoDate:focus {
+
+    transform:scale(1.03);
+
+    box-shadow:
+    0 0 15px rgba(0,242,254,.8);
+
+}
+
+
+
+.buttonTodo {
+
+    background:#00c853;
+
+    color:white;
+
+    border:none;
+
+    border-radius:15px;
+
+    padding:14px;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+.buttonTodo:hover {
+
+    background:#00e676;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 10px 20px rgba(0,0,0,.2);
+
+}
+
+
+
+.todoContainer {
+
+    margin-top:25px;
+
+}
+
+
+
+.todoContainer span {
+
+    background:white;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.1);
+
+}
+
+
+
+.buttonDelete {
+
+    background:#ff1744;
+
+    color:white;
+
+    border:none;
+
+    border-radius:15px;
+
+    padding:12px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+.buttonDelete:hover {
+
+    background:#d50000;
+
+    transform:translateY(-3px);
+
+}
+
+
+
+.todoContainer button {
+
+    font-size:14px;
+
+}
+
+
+
+.todoContainer span,
+.todoContainer button {
+
+    animation: show .3s ease;
+
+}
+
+
+
+@keyframes show {
+
+    from {
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to {
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+@media(max-width:600px){
+
+    .b{
+
+        width:90%;
+
+    }
+
+
+    .gridContainer{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
