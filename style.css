@@ -238,21 +238,40 @@ body {
 
 }
 
+@media(max-width:600px) {
 
-
-@media(max-width:600px){
-
-    .b{
-
-        width:90%;
-
+    .b {
+        width: 90%;
     }
 
-
-    .gridContainer{
-
-        grid-template-columns:1fr;
-
+    .gridContainer {
+        grid-template-columns: 1fr;
     }
 
+    .todoContainer {
+        grid-template-columns: 1fr;
+    }
+}
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+.buttonComplete {
+    background: #2979ff;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.buttonComplete:hover {
+    background: #1565c0;
+}
+.todoContainer {
+    display: grid;
+    grid-template-columns: 1fr 150px 100px 100px;
+    gap: 15px;
+    align-items: center;
+    margin-top: 25px;
 }

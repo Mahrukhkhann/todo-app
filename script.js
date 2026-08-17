@@ -1,16 +1,19 @@
 let todoList = [
     {
         item: 'buy milk',
-        dueDte: '3/2/2026'
+        dueDte: '3/2/2026',
+        completed: false
     },
 
     {
         item: 'go to school',
-        dueDte: '3/2/2026'
+        dueDte: '3/2/2026',
+        completed: false
     },
      {
         item: 'go to park',
-        dueDte: '3/8/2026'
+        dueDte: '3/8/2026',
+        completed: false
     },
     
 ];
@@ -27,13 +30,24 @@ function addTodo() {
 
     todoList.push({
         item: todoItem,
-        dueDte: todoDate
+        dueDte: todoDate,
+        completed: false
+        
     });
 
     inputElement.value = '';
     dateElement.value = '';
 
     displayItems();
+    
+}
+function toggleComplete(index) {
+
+    todoList[index].completed =
+        !todoList[index].completed;
+
+    displayItems();
+
 }
 
 
@@ -48,14 +62,32 @@ function displayItems() {
         let item = todoList[i].item;
         let dueDate = todoList[i].dueDte;
 
-        newhtml += `
-            <span>${item}</span>
-            <span>${dueDate}</span>
-            <button class="buttonDelete"
-                onclick="todoList.splice(${i},1); displayItems();">
-                Delete
-            </button>
-        `;
+        let completed = todoList[i].completed;
+
+        let itemClass = completed ? 'completed' : '';
+
+        // newhtml += `
+        //     <span>${item}</span>
+        //     <span>${dueDate}</span>
+        //     <button class="buttonDelete"
+        //         onclick="todoList.splice(${i},1); displayItems();">
+        //         Delete
+        //     </button>
+        // `;
+        newhtml += ` 
+    <span class="${itemClass}">${item}</span> 
+    <span>${dueDate}</span>
+
+    <button class="buttonComplete"
+        onclick="toggleComplete(${i})">
+        ${completed ? 'Undo' : 'Complete'}
+    </button>
+
+    <button class="buttonDelete" 
+        onclick="todoList.splice(${i},1); displayItems();"> 
+        Delete 
+    </button> 
+`;
     }
 
     containerElements.innerHTML = newhtml;
