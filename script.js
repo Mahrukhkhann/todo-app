@@ -1,15 +1,15 @@
 let todoList = [
-    {
-        item: 'buy milk',
-        dueDte: '3/2/2026',
-        completed: false
-    },
+    // {
+    //     item: 'buy milk',
+    //     dueDte: '3/2/2026',
+    //     completed: false
+    // },
 
-    {
-        item: 'go to school',
-        dueDte: '3/2/2026',
-        completed: false
-    },
+    // {
+    //     item: 'go to school',
+    //     dueDte: '3/2/2026',
+    //     completed: false
+    // },
      {
         item: 'go to park',
         dueDte: '3/8/2026',
@@ -17,6 +17,12 @@ let todoList = [
     },
     
 ];
+
+let savedTodos = localStorage.getItem('todoList');
+
+if (savedTodos) {
+    todoList = JSON.parse(savedTodos);
+}
 
 displayItems();
 
@@ -34,6 +40,7 @@ function addTodo() {
         completed: false
         
     });
+    localStorage.setItem('todoList', JSON.stringify(todoList));
 
     inputElement.value = '';
     dateElement.value = '';
