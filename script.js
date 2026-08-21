@@ -81,19 +81,24 @@ function displayItems() {
         //         Delete
         //     </button>
         // `;
-        newhtml += ` 
-    <span class="${itemClass}">${item}</span> 
-    <span>${dueDate}</span>
+newhtml += `
+    <div class="todoItem">
 
-    <button class="buttonComplete"
-        onclick="toggleComplete(${i})">
-        ${completed ? 'Undo' : 'Complete'}
-    </button>
+        <span class="${itemClass}">${item}</span>
 
-    <button class="buttonDelete" 
-        onclick="todoList.splice(${i},1); displayItems();"> 
-        Delete 
-    </button> 
+        <span>${dueDate}</span>
+
+        <button class="buttonComplete"
+            onclick="toggleComplete(${i})">
+            ${completed ? 'Undo' : 'Complete'}
+        </button>
+
+        <button class="buttonDelete"
+            onclick="todoList.splice(${i},1); displayItems();">
+            Delete
+        </button>
+
+    </div>
 `;
     }
 
