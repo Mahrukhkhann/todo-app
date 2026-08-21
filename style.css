@@ -238,20 +238,6 @@ body {
 
 }
 
-@media(max-width:600px) {
-
-    .b {
-        width: 90%;
-    }
-
-    .gridContainer {
-        grid-template-columns: 1fr;
-    }
-
-    .todoContainer {
-        grid-template-columns: 1fr;
-    }
-}
 .completed {
     text-decoration: line-through;
     opacity: 0.5;
@@ -274,4 +260,20 @@ body {
     gap: 15px;
     align-items: center;
     margin-top: 25px;
+}
+
+
+@media(max-width:600px) {
+
+    .b {
+        width: 90%;
+    }
+
+    .gridContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .todoContainer {
+        grid-template-columns: 1fr;
+    }
 }
