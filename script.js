@@ -56,6 +56,18 @@ function toggleComplete(index) {
     displayItems();
 
 }
+function deleteTodo(index) {
+
+    todoList.splice(index, 1);
+
+    localStorage.setItem(
+        'todoList',
+        JSON.stringify(todoList)
+    );
+
+    displayItems();
+
+}
 
 
 function displayItems() {
@@ -93,9 +105,9 @@ newhtml += `
             ${completed ? 'Undo' : 'Complete'}
         </button>
 
-        <button class="buttonDelete"
-            onclick="todoList.splice(${i},1); displayItems();">
-            Delete
+        <button class="buttonDelete"  
+            onclick="deleteTodo(${i});">  
+            Delete  
         </button>
 
     </div>
